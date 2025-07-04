@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Imágenes en HTML</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- src = source (origen, procedencia de la imagen) -->
-    <img src="https://images.unsplash.com/photo-1600520611035-84157ad4084d?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    <!-- <img src="https://images.unsplash.com/photo-1600520611035-84157ad4084d?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
     <img src="img/egipto.jpg" alt="">
     <img src="img/Sagrada_Familia._Facana_del_Naixement_cropped.avif" alt="">
     <img src="img/roma.jpg" alt="">
-<!-- 
+    <img src="img/Tomate.png" alt="">
+    <img src="img/Tomate.svg" alt=""> -->
+    <!-- 
     VIEWPORT = ancho y alto disponible para nuestra página
 
     Pixeles reales (PR)
@@ -20,11 +22,60 @@
     devicePixelRatio = PR / PV
 -->
 
-<picture>
+    <!-- 
+TIPOS DE IMÁGENES:
 
-</picture>
+MAPAS DE BITS :
 
-    
+    * jpg - jpge 
+        Lo bueno: es ligero porque está comprimido
+        Lo malo : es que ha perdido calidad porque está comprimido
+        Será adecuado para fotografías
+    * png 
+        Lo bueno: permite transparencia y no tiene compresión y tampoco perdida
+        Lo malo: es que como nio tiene compresión, pesa bastante más.
+    * gif
+        Para animaciones de poco tamaño
 
-</body>
+    * avif formato optimizado
+    * webp formato optimizado (se pueden hacer imágenes y videos)
+
+VECTORIALES
+    * svg : 
+        Lo bueno: no tiene pérdida, es muy ligera admite transparencias
+        Lo malo: no sirve para fotos
+
+
+-->
+    <figure>
+      <picture>
+        <source
+          srcset="img/egipto_2000x1500.avif"
+          media="(min-width:2000px)"
+          type="image/avif"
+        />
+        <source
+          srcset="img/roma_800x530.webp"
+          media="(min-width:800px)"
+          type="image/webp"
+        />
+        <img
+          src="img/Sagrada_Familia._Facana_del_Naixement_470x600.avif"
+          alt="Fotografía de mi viaje"
+        />
+      </picture>
+      <figcaption>Esto es un pie de foto</figcaption>
+    </figure>
+
+    <figure>
+      <figcaption>Imagen de tomate rojo en formato png</figcaption>
+      <img src="img/Tomate.png" alt="Tomate rojo" />
+    </figure>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, harum?
+    </p>
+    <img src="img/Tomate.png" alt="Tomate rojo" />
+    <p>Imagen de tomate rojo en formato png</p>
+  </body>
 </html>
